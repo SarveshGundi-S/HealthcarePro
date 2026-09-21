@@ -58,6 +58,11 @@
 			path = HealthcareProUITests;
 			sourceTree = "<group>";
 		};
+		79B214A630489B8300169D35 /* Configuration */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,7 @@
 		79B21403304814CC00169D35 = {
 			isa = PBXGroup;
 			children = (
+				79B214A630489B8300169D35 /* Configuration */,
 				79B2140E304814CC00169D35 /* HealthcarePro */,
 				79B21425304814CE00169D35 /* HealthcareProTests */,
 				79B2142F304814CE00169D35 /* HealthcareProUITests */,
@@ -122,6 +128,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				79B2140E304814CC00169D35 /* HealthcarePro */,
+				79B214A630489B8300169D35 /* Configuration */,
 			);
 			name = HealthcarePro;
 			packageProductDependencies = (
@@ -350,6 +357,8 @@
 		};
 		79B21438304814CE00169D35 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 79B214A630489B8300169D35 /* Configuration */;
+			baseConfigurationReferenceRelativePath = Debug.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -414,6 +423,8 @@
 		};
 		79B21439304814CE00169D35 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 79B214A630489B8300169D35 /* Configuration */;
+			baseConfigurationReferenceRelativePath = Release.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;

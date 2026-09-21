@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  HealthcarePro
-//
-//  Created by Sarvesh on 02/09/26.
-//
-
 import UIKit
 
 @main

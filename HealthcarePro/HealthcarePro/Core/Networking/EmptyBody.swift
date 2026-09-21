@@ -1,5 +1,9 @@
-
 import Foundation
 
-struct EmptyBody: Encodable {
+struct EmptyBody: Sendable {
 }
+
+nonisolated extension EmptyBody: Encodable {
+}
+
+struct EmptyResponse: Decodable, Sendable {}

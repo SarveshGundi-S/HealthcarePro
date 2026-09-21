@@ -1,17 +1,14 @@
 import Foundation
 
-struct NetworkConfiguration {
-    let serverBaseURL: URL
-    let assetBaseURL: URL
+struct NetworkConfiguration: Sendable {
+    let baseURL: URL
     let apiVersion: String
     let platformID: String
 
-    init(serverBaseURL: URL,
-         assetBaseURL: URL,
+    init(baseURL: URL,
          apiVersion: String,
          platformID: String) {
-        self.serverBaseURL = serverBaseURL
-        self.assetBaseURL = assetBaseURL
+        self.baseURL = baseURL
         self.apiVersion = apiVersion
         self.platformID = platformID
     }
@@ -20,11 +17,6 @@ struct NetworkConfiguration {
         guard let serverBaseURLString = bundle.object(forInfoDictionaryKey: "SERVER_BASE_URL") as? String,
               let serverBaseURL = URL(string: serverBaseURLString) else {
             fatalError("SERVER_BASE_URL is missing or invalid")
-        }
-
-        guard let assetBaseURLString = bundle.object(forInfoDictionaryKey: "ASSET_BASE_URL") as? String,
-              let assetBaseURL = URL(string: assetBaseURLString) else {
-            fatalError("ASSET_BASE_URL is missing or invalid")
         }
 
         guard let apiVersion = bundle.object(forInfoDictionaryKey: "API_VERSION") as? String,
@@ -37,8 +29,7 @@ struct NetworkConfiguration {
             fatalError("PLATFORM_ID is missing or invalid")
         }
         
-        self.init(serverBaseURL: serverBaseURL,
-                  assetBaseURL: assetBaseURL,
+        self.init(baseURL: serverBaseURL,
                   apiVersion: apiVersion,
                   platformID: platformID)
     }

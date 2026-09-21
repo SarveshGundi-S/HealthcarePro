@@ -1,13 +1,13 @@
 import Foundation
 
-struct AuthResponseDTO: Decodable {
+struct UserSession: Sendable {
     let accessToken: String
     let refreshToken: String
     let expiresIn: Int
-    let user: UserDTO
+    let user: User
 }
 
-struct UserDTO: Decodable {
+struct User: Sendable {
     let id: String
     let name: String
     let role: String

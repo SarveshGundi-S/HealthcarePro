@@ -24,7 +24,7 @@ final class APIClient: NetworkClient {
             throw NetworkError.transport(error)
         }
         
-        try validate(response)
+        try validate(response, data: data)
         return try decode(Request.Response.self, from: data)
     }
 }
@@ -106,7 +106,7 @@ private extension APIClient {
 }
 
 private extension APIClient {
-    func validate(_ response: URLResponse) throws {
+    func validate(_ response: URLResponse, data: Data) throws {
         guard let httpResponse = response as? HTTPURLResponse else {
             throw NetworkError.invalidResponse
         }
@@ -114,18 +114,34 @@ private extension APIClient {
         switch httpResponse.statusCode {
         case 200..<300:
             return
-        case 401:
-            throw NetworkError.unauthorized
-        case 403:
-            throw NetworkError.forbidden
-        case 404:
-            throw NetworkError.notFound
-        case 409:
-            throw NetworkError.conflict
+        case 400..<500:
+            throw decodeAPIError(from: data,
+                                 statusCode: httpResponse.statusCode)
         case 500..<600:
             throw NetworkError.serverError
         default:
             throw NetworkError.unexpectedStatusCode(httpResponse.statusCode)
+        }
+    }
+}
+
+private extension APIClient {
+    func decodeAPIError(from data: Data, statusCode: Int) -> NetworkError {
+        if let apiError = try? JSONDecoder().decode(APIErrorResponse.self, from: data) {
+            return .apiError(apiError)
+        }
+
+        switch statusCode {
+        case 401:
+            return .unauthorized
+        case 403:
+            return .forbidden
+        case 404:
+            return .notFound
+        case 409:
+            return .conflict
+        default:
+            return .unexpectedStatusCode(statusCode)
         }
     }
 }

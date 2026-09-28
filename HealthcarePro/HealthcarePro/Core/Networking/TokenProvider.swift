@@ -29,3 +29,10 @@ final class KeychainTokenProvider: TokenProvider {
         try keychain.delete(for: KeychainKey.accessToken)
     }
 }
+
+extension TokenProvider {
+
+    func isAuthenticated() async -> Bool {
+        await accessToken() != nil
+    }
+}

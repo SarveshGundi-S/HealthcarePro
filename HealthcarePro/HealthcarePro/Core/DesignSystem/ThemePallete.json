@@ -1,0 +1,31 @@
+
+{
+  "colors": {
+    "primary": "#0066CC",
+    "background": "#FFFFFF",
+    "surface": "#F5F7FA",
+    "textPrimary": "#111111",
+    "textSecondary": "#666666",
+    "error": "#D32F2F"
+  },
+  "typography": {
+    "title": {
+      "fontSize": 24,
+      "fontWeight": "bold"
+    },
+    "body": {
+      "fontSize": 16,
+      "fontWeight": "regular"
+    },
+    "caption": {
+      "fontSize": 13,
+      "fontWeight": "regular"
+    }
+  },
+  "spacing": {
+    "small": 8,
+    "medium": 16,
+    "large": 24,
+    "extraLarge": 32
+  }
+}

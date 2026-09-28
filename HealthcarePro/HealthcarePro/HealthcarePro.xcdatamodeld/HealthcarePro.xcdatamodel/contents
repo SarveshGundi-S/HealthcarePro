@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="25249" systemVersion="25G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="AppointmentEntity" representedClassName="AppointmentEntity" syncable="YES">
+        <attribute name="appointmentDate" attributeType="String"/>
+        <attribute name="doctorId" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="patientId" attributeType="String"/>
+        <attribute name="status" attributeType="String"/>
+    </entity>
+</model>

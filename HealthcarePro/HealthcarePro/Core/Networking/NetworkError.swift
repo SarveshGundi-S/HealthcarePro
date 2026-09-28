@@ -11,6 +11,8 @@ enum NetworkError: Error, Sendable {
     case conflict
     case serverError
     case unexpectedStatusCode(Int)
+    
+    case apiError(APIErrorResponse)
 
     case decoding
     case encoding

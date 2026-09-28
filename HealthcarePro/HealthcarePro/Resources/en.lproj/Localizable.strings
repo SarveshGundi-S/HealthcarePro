@@ -1,0 +1,41 @@
+"launch.loading" = "Loading...";
+
+"login.title" = "Login";
+"login.email" = "Email";
+"login.password" = "Password";
+"login.button" = "Login";
+"login.error.title" = "Login Failed";
+"login.error.invalid_credentials" = "Invalid email or password.";
+"login.error.email_required" = "Please enter your email address.";
+"login.error.invalid_email" = "Please enter a valid email address.";
+"login.error.password_required" = "Please enter your password.";
+
+"patient.title" = "Patient";
+"patient.date_of_birth" = "Date of Birth";
+"patient.phone" = "Phone";
+"patient.email" = "Email";
+"patient.error.title" = "Unable to Load Patient";
+
+"appointment.title" = "Book Appointment";
+"appointment.doctor" = "Doctor";
+"appointment.date" = "Appointment Date";
+"appointment.book_button" = "Book Appointment";
+
+"appointment.success.title" = "Appointment Booked";
+"appointment.error.title" = "Unable to Book Appointment";
+
+"appointment.error.doctor_required" = "Please select a doctor.";
+"appointment.error.invalid_date" = "Please select a future date.";
+
+"appointment.bookAppointment" = "Book Appointment";
+"appointment.viewAppointments" = "View Appointments";
+
+"common.error" = "Error";
+"common.ok" = "OK";
+"common.sessionExpired" = "Your session has expired. Please log in again.";
+"common.noPermission" = "You don't have permission to view appointments.";
+"common.noAppointments" = "No appointments were found.";
+"common.serverError" = "Something went wrong on the server. Please try again.";
+"common.networkError" = "Please check your internet connection and try again.";
+"common.unableToLoadAppointments" = "Unable to load appointments. Please try again.";
+"common.somethingWentWrong" = "Something went wrong. Please try again.";
